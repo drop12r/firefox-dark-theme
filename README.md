@@ -1,6 +1,6 @@
-# Dark Minimalist Theme for Mozilla Firefox
+# Dark Minimalist Theme for Firefox
 
-A `userChrome.css` and `userContent.css` theme for Mozilla Firefox focused on minimalism, dark blue and dark purpule colours. 
+A `userChrome.css` and `userContent.css` theme for Firefox focused on minimalism, dark blue and dark purpule colours. 
 It modifies the browser's interface to reduce visual clutter and implements custom SVG icons.
 
 <img src="preview.png" alt="Firefox Theme Preview" width="100%">
