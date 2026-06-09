@@ -1,0 +1,256 @@
+/* 1. Toolbar Colours and Sizes */
+:root {
+    --toolbar-min-height: 26px !important;
+    --urlbar-min-height: 24px !important;
+    --tab-min-height: 24px !important;
+
+    --bg-dark: #0f111a !important;
+    --bg-panel: #1a1e2d !important;
+    --text-color: #8c97b5 !important;
+    --text-active: #ffffff !important;
+
+    --accent-purple: #825cff !important;
+    --accent-purple-hover: #a88cff !important;
+    --toolbarbutton-icon-fill: var(--accent-purple) !important;
+
+    --tab-line-start: #4d7cff !important;
+    --tab-line-end: #b366ff !important;
+
+    --folder-cyber: #00d7ff !important;
+    --folder-shops: #a6e3a1 !important;
+    --folder-staff: #f5c2e7 !important;
+    --folder-yt: #ff4d4d !important;
+}
+
+/* 2. Panel Rearrangement and Customization */
+#navigator-toolbox {
+    display: flex !important;
+    flex-direction: column !important;
+    background-color: var(--bg-panel) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#nav-bar {
+    order: 1 !important;
+    background: transparent !important;
+    padding: 2px 4px !important;
+    margin: 0 !important;
+    border: none !important;
+    min-height: var(--toolbar-min-height) !important;
+    max-height: var(--toolbar-min-height) !important;
+    box-shadow: none !important;
+}
+
+#TabsToolbar {
+    order: 2 !important;
+    background: var(--bg-dark) !important;
+    border: none !important;
+    min-height: var(--tab-min-height) !important;
+}
+
+#TabsToolbar .titlebar-spacer,
+.titlebar-buttonbox-container {
+    display: none !important;
+}
+
+#PersonalToolbar {
+    order: 3 !important;
+    background: transparent !important;
+    padding: 1px 8px !important;
+}
+
+/* 3. Folders and Bookmarks */
+.bookmark-item .toolbarbutton-icon {
+    display: none !important;
+}
+
+.bookmark-item {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    padding: 2px 6px !important;
+    margin: 0 2px !important;
+    color: var(--text-color) !important;
+}
+
+.bookmark-item[label="Cyber"] .toolbarbutton-text { color: var(--folder-cyber) !important; }
+.bookmark-item[label="Shops"] .toolbarbutton-text { color: var(--folder-shops) !important; }
+.bookmark-item[label="My staff"] .toolbarbutton-text { color: var(--folder-staff) !important; }
+.bookmark-item[label="YT"] .toolbarbutton-text { color: var(--folder-yt) !important; }
+
+/* 4. URL Bar Settings */
+#urlbar-container {
+    padding: 0 6px !important;
+    margin: 0 !important;
+    min-height: var(--urlbar-min-height) !important;
+}
+
+#urlbar {
+    min-height: var(--urlbar-min-height) !important;
+}
+
+#urlbar-background {
+    background: rgba(0, 0, 0, 0.25) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+}
+
+#urlbar-input {
+    font-size: 11px !important;
+    text-align: center !important;
+    color: var(--text-color) !important;
+}
+
+#reader-mode-button,
+#picture-in-picture-button,
+#translations-button,
+#pageActionButton,
+#identity-box,
+#tracking-protection-icon-container,
+#urlbar-go-button,
+.urlbar-page-action {
+    display: none !important;
+}
+
+/* 5. Tab Styling and Bug Fixes */
+.tabbrowser-tab .tab-close-button {
+    list-style-image: url("close.svg") !important;
+    -moz-context-properties: fill, stroke !important;
+    fill: var(--accent-purple) !important;
+    stroke: var(--accent-purple) !important;
+    color: var(--accent-purple) !important;
+    transform: scale(0.7) !important;
+    opacity: 1 !important;
+}
+
+.tabbrowser-tab .tab-close-button:hover {
+    fill: var(--accent-purple-hover) !important;
+    stroke: var(--accent-purple-hover) !important;
+    color: var(--accent-purple-hover) !important;
+}
+
+.tabbrowser-tab:not([pinned]) {
+    max-width: 160px !important;
+    height: var(--tab-min-height) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.15) !important;
+}
+
+.tabbrowser-tab[fadein]:not([pinned]) {
+    min-width: 120px !important;
+}
+
+.tabbrowser-tab:not([fadein]) {
+    min-width: 1px !important;
+    max-width: 1px !important;
+    border: none !important;
+}
+
+.tab-background {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-background {
+    background-color: var(--bg-dark) !important;
+    background-image: none !important;
+    box-shadow: inset 0 -2px 0 var(--tab-line-start) !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+    border-bottom: 2px solid transparent !important;
+    border-image: linear-gradient(90deg, var(--tab-line-start), var(--tab-line-end)) 1 !important;
+}
+
+.tab-label {
+    font-size: 11px !important;
+    color: var(--text-color) !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-label {
+    color: var(--text-active) !important;
+}
+
+.toolbarbutton-1 > .toolbarbutton-icon,
+.toolbarbutton-1 > .toolbarbutton-badge-stack,
+.tab-close-button .toolbarbutton-icon,
+#tabs-newtab-button .toolbarbutton-icon {
+    color: var(--accent-purple) !important;
+    fill: var(--accent-purple) !important;
+    stroke: var(--accent-purple) !important;
+    -moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
+}
+
+.toolbarbutton-1:hover > .toolbarbutton-icon,
+.toolbarbutton-1:hover > .toolbarbutton-badge-stack,
+.tab-close-button:hover .toolbarbutton-icon,
+#tabs-newtab-button:hover .toolbarbutton-icon {
+    color: var(--accent-purple-hover) !important;
+    fill: var(--accent-purple-hover) !important;
+    stroke: var(--accent-purple-hover) !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-close-button,
+.tabbrowser-tab[selected="true"] .tab-close-button .toolbarbutton-icon {
+    color: var(--accent-purple) !important;
+    fill: var(--accent-purple) !important;
+    stroke: var(--accent-purple) !important;
+    opacity: 1 !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-close-button:hover,
+.tabbrowser-tab[selected="true"] .tab-close-button:hover .toolbarbutton-icon {
+    color: var(--accent-purple-hover) !important;
+    fill: var(--accent-purple-hover) !important;
+    stroke: var(--accent-purple-hover) !important;
+}
+
+#back-button, #forward-button, #reload-button, #home-button, #downloads-button,
+#fxa-menu-button, #PanelUI-menu-button, .webextension-browser-action {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.04) !important;
+    border-radius: 4px !important;
+    padding: 3px 4px !important;
+    margin: 0 1px !important;
+    transform: scale(0.82) !important;
+    transition: all 0.2s ease !important;
+}
+
+#back-button:hover, #reload-button:hover, #downloads-button:hover, #PanelUI-menu-button:hover {
+    background: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* 6. Custom Icons */
+#back-button .toolbarbutton-icon { list-style-image: url("back.svg") !important; }
+#forward-button .toolbarbutton-icon { list-style-image: url("forward.svg") !important; }
+#reload-button .toolbarbutton-icon { list-style-image: url("reload.svg") !important; }
+#PanelUI-menu-button .toolbarbutton-icon { list-style-image: url("menu.svg") !important; }
+
+#tabs-newtab-button .toolbarbutton-icon {
+    list-style-image: url("plus.svg") !important;
+    transform: scale(0.85) !important;
+}
+
+#back-button .toolbarbutton-icon,
+#forward-button .toolbarbutton-icon,
+#reload-button .toolbarbutton-icon,
+#PanelUI-menu-button .toolbarbutton-icon,
+#tabs-newtab-button .toolbarbutton-icon {
+    -moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
+    fill: #825cff !important;
+    stroke: #825cff !important;
+    color: #825cff !important;
+}
+
+#back-button:hover .toolbarbutton-icon,
+#forward-button:hover .toolbarbutton-icon,
+#reload-button:hover .toolbarbutton-icon,
+#PanelUI-menu-button:hover .toolbarbutton-icon,
+#tabs-newtab-button:hover .toolbarbutton-icon {
+    fill: #a88cff !important;
+    stroke: #a88cff !important;
+    color: #a88cff !important;
+}
